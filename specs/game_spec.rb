@@ -11,18 +11,19 @@ describe Game do
   end
 
   it "selects a target card" do
-
+    game = Game.new(1)
+    game.pick_card.must_equal 1
   end
 
   it "returns true if the card is guessed" do
-
+    game = Game.new(1)
+    game.pick_card
+    game.guess(1).must_equal true
   end
 
   it "won't return true if the guess is incorrect" do
-
-  end
-
-  it "wins a game with the correct guess" do
-
+    game = Game.new(1)
+    game.pick_card
+    game.guess(2).must_equal false
   end
 end
